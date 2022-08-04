@@ -2,7 +2,7 @@
 Utilities for text output
 """
 
-import time
+import time, sys
 
 def type(text: str, delay: float = 0.05, newline_delay: float = 0.0) -> None:
     """ Prints the given text, one character at a time, with a delay between each character.

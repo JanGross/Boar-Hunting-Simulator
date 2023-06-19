@@ -2,6 +2,8 @@
 Utility to show a seletion menu
 """
 import time
+import utils.text as Text
+
 class Option(object):
     def __init__(self, text: str, callback: callable) -> None:
         self.text = text
@@ -25,7 +27,7 @@ class Menu(object):
             time.sleep(0.5)
             self.show()
         else:
-            print("") #Newline for better readability
+            Text.clear()
             if self.options[selected-1].callback is not None:
                 self.options[selected-1].callback()
 

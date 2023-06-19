@@ -1,5 +1,6 @@
 """Generic Location"""
 from utils.input import Option
+from utils.text import HeaderStyle
 import utils.text as Text
 import time
 
@@ -12,10 +13,12 @@ class Location:
         self.game = game
 
     def look_around(self) -> None:
+        Text.print_header(self.name, HeaderStyle.ROUND)
         Text.type(f"{self.description}\n", 0.01, 0.1)
         time.sleep(0.5)
 
     def enter(self) -> None:
+        Text.print_header(self.name, HeaderStyle.ROUND)
         print(f"You enter {self.name}.\n")
         self.game.current_location = self
         time.sleep(0.5)

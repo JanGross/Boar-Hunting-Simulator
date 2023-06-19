@@ -35,12 +35,7 @@ class Game:
         Text.print_header("Welcome", HeaderStyle.ROUND)
         Text.type(mt.intro_text, delay=0.01, newline_delay=1.0)
         while not self.quit:
-            options = [
-                Option("Test option", lambda: print("Test option selected\n")),
-                Option("Test option no callback", None),
-            ]
-            options.extend(self.current_location.options)
-            Menu("What would you like to do?", options).show()
+            Menu("What would you like to do?", self.current_location.options).show()
 
 
 
